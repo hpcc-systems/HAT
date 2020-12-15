@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Workunit } from "@hpcc-js/comms";
 import GraphDetails from './GraphDetails';
+import SubGraphDetails from './SubGraphDetails';
+import ActivityDetails from './ActivityDetails';
+import EdgeDetails from './EdgeDetails';
 
 const GetDetail = (props) => {
   const [detail, SetDetail] = useState([]);
@@ -38,7 +41,14 @@ const GetDetail = (props) => {
     }).then((detail) => SetDetail(detail));
   }, [props.wuid, props.ip]);
 
-  return (<GraphDetails data={detail} />);
+  return (
+    <React.Fragment>
+      <GraphDetails data={detail} />
+      <SubGraphDetails data={detail} />
+      <ActivityDetails data={detail} />
+      <EdgeDetails data={detail} />
+    </React.Fragment>
+  );
 };
 
 export default GetDetail;

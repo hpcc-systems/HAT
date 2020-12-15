@@ -49,11 +49,12 @@ class WorkunitInfo extends React.Component {
   };
 
   render() {
+    console.log(this.props.location.search);
     const params = WorkunitInfo.getQueryStringParams(
       this.props.location.search
     );
 
-    if (params.wuid) {
+    if (params.wuid && params.ip) {
       return (
         <React.Fragment>
           <Layout className="site-layout" style={{ marginLeft: 30 }}>

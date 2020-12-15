@@ -8,7 +8,7 @@ const { Sider } = Layout;
 
 class LeftNav extends React.Component {
   state = {
-    collapsed: false,
+    collapsed: true,
   };
 
   onCollapse = (collapsed) => {
@@ -29,7 +29,7 @@ class LeftNav extends React.Component {
             </div>
           </center>
           <Menu
-            defaultSelectedKeys={["GeneralInfo"]}
+            //defaultSelectedKeys={["GeneralInfo"]}
             defaultOpenKeys={["singleWorkunit", "compareWorkunit"]}
             mode="inline"
           >
@@ -41,7 +41,7 @@ class LeftNav extends React.Component {
               <Menu.Item key="GeneralInfo">
                 <Link to="/Info">Workunit Info</Link>
               </Menu.Item>
-              <Menu.Item key="WorkunitDetails">
+              <Menu.Item key="WorkunitDetail">
                 <Link to="/Graph">Graph Analysis</Link>
               </Menu.Item>
             </SubMenu>
