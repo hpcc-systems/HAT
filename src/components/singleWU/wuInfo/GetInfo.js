@@ -13,11 +13,11 @@ const GetInfo = (props) => {
   useEffect(() => {
     let wu = Workunit.attach(
       {
-        baseUrl: props.ip,
-        userID: props.user,
-        password: props.pass,
+        baseUrl: props.parameters.ip,
+        userID: props.parameters.user,
+        password: props.parameters.pass,
       },
-      props.wuid
+      props.parameters.wuid
     );
 
     wu.WUInfo({
@@ -28,7 +28,7 @@ const GetInfo = (props) => {
       IncludeResults: false,
       IncludeHelpers: false,
     }).then((info) => SetInfo(info));
-  }, [props.wuid, props.ip]);
+  }, [props.parameters.wuid, props.parameters.ip]);
 
   return (
     <React.Fragment>

@@ -11,11 +11,11 @@ const GetDetail = (props) => {
   useEffect(() => {
     let wu = Workunit.attach(
       {
-        baseUrl: props.ip,
-        userID: props.user,
-        password: props.pass,
+        baseUrl: props.parameters.ip,
+        userID: props.parameters.user,
+        password: props.parameters.pass,
       },
-      props.wuid
+      props.parameters.wuid
     );
     wu.WUDetails({
       PropertiesToReturn: {
@@ -39,7 +39,7 @@ const GetDetail = (props) => {
         IncludeScopeType: true,
       },
     }).then((detail) => SetDetail(detail));
-  }, [props.wuid, props.ip]);
+  }, [props.parameters.wuid, props.parameters.ip]);
 
   return (
     <React.Fragment>
