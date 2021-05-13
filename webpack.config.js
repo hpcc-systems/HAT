@@ -11,8 +11,11 @@ module.exports = {
   // },
   entry: "./src/components/Main.js",
   output: {
-    filename: "build/static/js/bundle.min.js",
-    libraryTarget: 'umd',
+    // filename: "build/static/js/bundle.min.js",
+    // libraryTarget: 'umd',
+    filename: 'hat.bundle.js',
+    library: 'hat',
+    libraryTarget: 'umd'
   },
   module: {
     rules: [
@@ -27,4 +30,7 @@ module.exports = {
       { test: /\.less/, loader: "style-loader!css-loader!less-loader" },
     ],
   },
+  externals: {
+    react: "react"
+  }
 };
